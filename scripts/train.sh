@@ -18,7 +18,7 @@ SECONDS=0
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/crime_and_punishment/ \
         --epochs 20 \
         --log-interval 100 \
-        --emsize 200 --nhid 200 --dropout 0.3 --tied \
+        --emsize 200 --nhid 200 --dropout 0.0 --tied \
         --save $models/model.pt \
         --cuda \
         --save-perplexities
