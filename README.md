@@ -41,4 +41,21 @@ Generate (sample) some text from a trained model with:
 
     ./scripts/generate.sh
 
+# Changes
+scripts/download_data.sh: I changed the link to download another book from project Gutenberg, and preprocess and split into train, valid, test sets. 
+
+scripts/train.sh: I only changed the hyperparameters epochs and dropout. I changed epochs to 20 because I saw that after epoch 15 the validation loss and perplexity was not improving.
+
+/tools/pytorch-examples/word language model/main.py
+1. Added a new flag (--save_perplexities) for printing the perplexities at each epoch to a log file. This creates a new folder called logs in mt-exercise-03, and creates a new log file perplexities_{dropout}.log in logs folder. For example if dropout is 0.0: logs/perplexities_0.0.log is created.
+2. Run ./scripts/train.sh each time changing the dropout in the train.sh.
+   
+scripts/tables_plots.py: I created a new python script that takes as input the logs folder. It parses the folder, and generates the table and plot for the assignment Part 2. 
+
+Running:
+
+    python {path_to_repo_folder}/mt-exercise-03/scripts/tables_plots.py  {path_to_repo_folder}/mt-exercise-03/logs
+
+
+
 
